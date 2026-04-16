@@ -632,21 +632,21 @@ The derivation shows the exact equivalence between the energy approach and the d
 
 ## Problem Statement
 
-Two bodies with masses $m_1$ and $m_2$ move along a single straight line. The collision is perfectly elastic. Write down the principles of conservation of momentum and energy. Determine the velocities after the collision. Consider the case $m_1 = m_2$ and the limit $m_2 \gg m_1$. Interpret the results physically.
+Two bodies with masses $m_1$ and $m_2$ move along a single straight line. The collision is perfectly elastic. The principles of conservation of momentum and energy must be written down. The final velocities after the collision must be determined. Two specific cases must be considered and interpreted: $m_1 = m_2$ and the limit $m_2 \gg m_1$.
 
 ## Theory
 
-For an isolated system with no external forces, the total momentum is conserved. If the collision is perfectly elastic, the total kinetic energy of the system is also conserved. 
+For an isolated two-body system with no external forces, the total momentum is conserved before and after the collision. Because the collision is perfectly elastic, the total kinetic energy of the system is also conserved.
 
-Let $v_1$ and $v_2$ be the initial velocities of masses $m_1$ and $m_2$ respectively, and $u_1$ and $u_2$ be their final velocities after the collision.
+Let $v_1$ and $v_2$ be the initial velocities of masses $m_1$ and $m_2$, respectively. Let $u_1$ and $u_2$ be their final velocities after the collision.
 
-The principle of conservation of momentum is:
+The principle of conservation of momentum is formulated as:
 
 $$
 m_1 v_1 + m_2 v_2 = m_1 u_1 + m_2 u_2
 $$
 
-The principle of conservation of kinetic energy is:
+The principle of conservation of kinetic energy is formulated as:
 
 $$
 \frac{1}{2}m_1 v_1^2 + \frac{1}{2}m_2 v_2^2 = \frac{1}{2}m_1 u_1^2 + \frac{1}{2}m_2 u_2^2
@@ -654,7 +654,7 @@ $$
 
 ## Step-by-Step Solution
 
-To find the final velocities $u_1$ and $u_2$, the conservation equations are rearranged. First, group the terms associated with each mass.
+To determine the final velocities $u_1$ and $u_2$, the conservation equations must be solved simultaneously. First, the terms associated with each mass are grouped on opposite sides of the equations.
 
 From the momentum equation:
 
@@ -662,7 +662,7 @@ $$
 m_1(v_1 - u_1) = m_2(u_2 - v_2)
 $$
 
-From the kinetic energy equation (multiplying by 2 first):
+From the kinetic energy equation (multiplying by $2$ to eliminate the fractions):
 
 $$
 m_1(v_1^2 - u_1^2) = m_2(u_2^2 - v_2^2)
@@ -674,7 +674,129 @@ $$
 m_1(v_1 - u_1)(v_1 + u_1) = m_2(u_2 - v_2)(u_2 + v_2)
 $$
 
-Assuming a non-trivial collision ($v_1 \neq u_1$ and $v_2 \neq u_2$), divide
+Assuming a non-trivial collision where the velocities actually change ($v_1 \neq u_1$ and $v_2 \neq u_2$), the factored energy equation is divided by the rearranged momentum equation. This yields a linear relationship between the initial and final relative velocities:
+
+$$
+v_1 + u_1 = u_2 + v_2
+$$
+
+This equation is rearranged to isolate $u_2$:
+
+$$
+u_2 = v_1 + u_1 - v_2
+$$
+
+This expression for $u_2$ is substituted back into the rearranged momentum equation:
+
+$$
+m_1(v_1 - u_1) = m_2((v_1 + u_1 - v_2) - v_2)
+$$
+
+$$
+m_1 v_1 - m_1 u_1 = m_2 v_1 + m_2 u_1 - 2m_2 v_2
+$$
+
+The terms containing $u_1$ are collected on one side:
+
+$$
+u_1(m_1 + m_2) = m_1 v_1 - m_2 v_1 + 2m_2 v_2
+$$
+
+$$
+u_1(m_1 + m_2) = (m_1 - m_2)v_1 + 2m_2 v_2
+$$
+
+Dividing by the total mass yields the final velocity $u_1$:
+
+$$
+u_1 = \frac{m_1 - m_2}{m_1 + m_2}v_1 + \frac{2m_2}{m_1 + m_2}v_2
+$$
+
+By symmetry (swapping subscripts $1$ and $2$), the final velocity $u_2$ is:
+
+$$
+u_2 = \frac{2m_1}{m_1 + m_2}v_1 + \frac{m_2 - m_1}{m_1 + m_2}v_2
+$$
+
+Next, the specific limits are evaluated.
+
+**Case 1: Equal masses ($m_1 = m_2 = m$)**
+
+Substituting $m_1 = m_2$ into the velocity equations:
+
+$$
+\begin{align}
+u_1 &= \frac{0}{2m}v_1 + \frac{2m}{2m}v_2 = v_2 \\
+u_2 &= \frac{2m}{2m}v_1 + \frac{0}{2m}v_2 = v_1
+\end{align}
+$$
+
+**Case 2: Massive target ($m_2 \gg m_1$)**
+
+In this limit, terms containing $m_1$ become negligible compared to $m_2$. Taking the limit as $m_2 \to \infty$:
+
+$$
+\frac{m_1 - m_2}{m_1 + m_2} \approx \frac{-m_2}{m_2} = -1
+$$
+
+$$
+\frac{2m_2}{m_1 + m_2} \approx \frac{2m_2}{m_2} = 2
+$$
+
+$$
+\frac{2m_1}{m_1 + m_2} \approx 0
+$$
+
+$$
+\frac{m_2 - m_1}{m_1 + m_2} \approx \frac{m_2}{m_2} = 1
+$$
+
+Applying these approximations to the velocity equations:
+
+$$
+\begin{align}
+u_1 &\approx -v_1 + 2v_2 \\
+u_2 &\approx v_2
+\end{align}
+$$
+
+## Final Result
+
+The general final velocities after an elastic collision are:
+
+$$
+u_1 = \frac{m_1 - m_2}{m_1 + m_2}v_1 + \frac{2m_2}{m_1 + m_2}v_2
+$$
+
+$$
+u_2 = \frac{2m_1}{m_1 + m_2}v_1 + \frac{m_2 - m_1}{m_1 + m_2}v_2
+$$
+
+For equal masses ($m_1 = m_2$):
+
+$$
+u_1 = v_2
+$$
+
+$$
+u_2 = v_1
+$$
+
+For a massive target ($m_2 \gg m_1$):
+
+$$
+u_1 \approx -v_1 + 2v_2
+$$
+
+$$
+u_2 \approx v_2
+$$
+
+## Interpretation
+
+The case $m_1 = m_2$ demonstrates that identical particles undergoing a one-dimensional perfectly elastic collision completely exchange their velocities.
+
+The case $m_2 \gg m_1$ represents a light particle colliding with an incredibly heavy, nearly immovable object (like a ball bouncing off a massive wall). The heavy object's velocity $u_2$ remains essentially unchanged ($u_2 \approx v_2$). If the heavy object is initially at rest ($v_2 = 0$), the light particle bounces back with its exact initial speed reversed ($u_1 \approx -v_1$). If the heavy object is moving toward the light particle, the light particle bounces off with an even greater speed due to the $2v_2$ term.
 # Task 06 – Motion with linear drag
 
 ## Problem Statement
